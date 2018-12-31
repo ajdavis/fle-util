@@ -19,37 +19,29 @@ and use keys on KMS. Note down the AWS access key ID and secret access key.
 5. Install the [AWS CLI tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 and run:
     ```
-    aws configure
+    > aws configure
     ```
 6. Install the example dependencies a new Python virtual environment. This is important, since the example
 uses a forked and modified pymongo.
     ```
-    virtualenv venv
-    . ./venv/bin/activate
-    pip install -r requirements
+    > virtualenv venv
+    > . ./venv/bin/activate
+    > pip install -r requirements
     ```
 7. Run the included setup script
     ```
-    python setup_key_vault.py
+    > python setup_key_vault.py
     ```
 8. Run the example. This uses an example schema and automatically encrypts an "ssn" field. AWS credentials are passed through environment variables.
     ```
-    export AWS_REGION="us-east-1"
-    export AWS_ACCESS_KEY_ID="abc"
-    export AWS_SECRET_ACCESS_KEY="def"
-    python example.py
+    > export AWS_REGION="us-east-1"
+    > export AWS_ACCESS_KEY_ID="abc"
+    > export AWS_SECRET_ACCESS_KEY="def"
+    > python example.py
+    Inserted and got back: {"ssn": "457-55-5642", "_id": {"$oid": "5c2a6f6e871516551fb90632"}, "name": "Todd Davis"}
+    But 'ssn' is stored as encrypted data. Use mongo shell to see.
     ```
+
+Setting the environment variable `MONGOCRYPT_TRACE` shows underlying tracing in libmongocrypt.
 ## See also ##
 [mockupcryptd](https://github.com/mongodb-labs/mockupcryptd) (and coming soon) mockupkms
-
-# TODO #
-- hide tracing in libmongocrypt behind an environment variable!
-- audit libmongocrypt
-- write nice instructions and disclaimers
-- try making a KMS server, and allow libmongocrypt to connect to it somehow
-
-example.py
-depends on a forked pymongo
-depends on a hacked together pymongocrypt
-depends on a hacked together libmongocrypt
-depends on libmongoc, libbson, and libkms_message
