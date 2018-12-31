@@ -44,4 +44,7 @@ uses a forked and modified pymongo.
 
 Setting the environment variable `MONGOCRYPT_TRACE` shows underlying tracing in libmongocrypt.
 ## See also ##
-[mockupcryptd](https://github.com/mongodb-labs/mockupcryptd) (and coming soon) mockupkms
+- [mockupcryptd](https://github.com/mongodb-labs/mockupcryptd) - a mock mongocryptd.
+- [libmongocrypt](https://github.com/kevinAlbs/libmongocrypt) - a prototype C library for FLE. Communicates with KMS, mongocryptd, and does encryption.
+- [pymongocrypt](https://github.com/kevinAlbs/pymongocrypt) a hacky Python wrapper around libmongocrypt.
+- (coming soon) mockupkms
