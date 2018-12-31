@@ -1,0 +1,3 @@
+git+https://github.com/kevinAlbs/mongo-python-driver@crypt-prototype#egg=pymongo
+git+https://github.com/kevinAlbs/pymongocrypt@master#egg=pymongocrypt
+boto3
