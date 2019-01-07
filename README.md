@@ -9,7 +9,7 @@ Note, example.py __only works on macOS__ (if even that).
 1. Run `mongod`.
 2. Install [mockupcryptd](https://github.com/mongodb-labs/mockupcryptd) and run:
     ```
-    > mongocryptd
+    > mockupcryptd
     Listening with domain socket /tmp/mongocryptd.sock
     URI is mongodb://%2Ftmp%2Fmongocryptd.sock
     ```
