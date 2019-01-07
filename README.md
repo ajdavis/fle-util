@@ -26,7 +26,7 @@ uses a forked and modified pymongo.
     ```
     > virtualenv venv
     > . ./venv/bin/activate
-    > pip install -r requirements
+    > pip install -r requirements.txt
     ```
 7. Run the included setup script
     ```
