@@ -7,26 +7,25 @@ This repository includes a very simple example of automatic encryption and decry
 Note, example.py __only works on macOS__ (if even that).
 
 1. Run `mongod`.
-2. Install [mockupcryptd](https://github.com/mongodb-labs/mockupcryptd) and run:
-    ```
-    > mockupcryptd
-    Listening with domain socket /tmp/mongocryptd.sock
-    URI is mongodb://%2Ftmp%2Fmongocryptd.sock
-    ```
-3. Create an AWS account with an IAM user with privileges to create
-and use keys on KMS. Note down the AWS access key ID and secret access key.
-4. Create a customer master key (CMK) in the AWS console. Note down the resulting key id.
-5. Install the [AWS CLI tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
-and run:
-    ```
-    > aws configure
-    ```
-6. Install the example dependencies a new Python virtual environment. This is important, since the example
+2. Install the example dependencies a new Python virtual environment. This is important, since the example
 uses a forked and modified pymongo.
     ```
     > virtualenv venv
     > . ./venv/bin/activate
     > pip install -r requirements.txt
+    ```
+3. Run [mockupcryptd](https://github.com/mongodb-labs/mockupcryptd):
+    ```
+    > mockupcryptd
+    Listening with domain socket /tmp/mongocryptd.sock
+    URI is mongodb://%2Ftmp%2Fmongocryptd.sock
+    ```
+4. Create an AWS account with an IAM user with privileges to create
+and use keys on KMS. Note down the AWS access key ID and secret access key.
+5. Create a customer master key (CMK) in the AWS console. Note down the resulting key id.
+6. Configure the [AWS CLI tools](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html):
+    ```
+    > aws configure
     ```
 7. Run the included setup script
     ```

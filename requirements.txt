@@ -1,3 +1,5 @@
 git+https://github.com/kevinAlbs/mongo-python-driver@crypt-prototype#egg=pymongo
 git+https://github.com/kevinAlbs/pymongocrypt@master#egg=pymongocrypt
+git+https://github.com/mongodb-labs/mockupcryptd.git
 boto3
+awscli
